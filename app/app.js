@@ -51,18 +51,11 @@ fs.readFile(path.join(__dirname, 'blds', 'blds.json'), 'utf8', (err, result) => 
   }
 })
 
-
-
-
 function getBldCds(blds) {
   return blds.map(bld => {
     return bld.bldCd
   })
 }
-
-
-  // "addrHouseNumber": 165, // 도로명 주소 번호
-  // "addrStreet": "양화로", // 도로명 주소의 도로
 
 function getStoreHistoryInfo(buildingId) {
   return new Promise((resolve, reject) => {
@@ -79,7 +72,6 @@ function getStoreHistoryInfo(buildingId) {
         reject(err)
       }
       else {
-        console.log(body)
         let data = JSON.parse(body)
 
         if (data['exception']) {
